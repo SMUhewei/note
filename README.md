@@ -13,3 +13,8 @@
 * [docker](./docs/docker.md)
 * [计算机网络](./docs/计算机网络.md)
 * [计算机组成原理](./docs/计算机组成原理.md)
+
+# 笔记已经部署在github和gitee上
+
+* [github](https://hewei.store/)
+* [gitee]( https://sshewei.gitee.io/note)

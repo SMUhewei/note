@@ -6,7 +6,7 @@
  - 如果`git help`后面有`-guide`或者`-g`参数，命令行将会打印出`有用的git指南`。
  - `git --help` 与 `git help` 相同，因为前者被内部转换为后者。
  - 举栗子：如果想要查看`pull命令`如何使用，则可以使用`git help pull`命令,按键盘中的`q键`可退出
-  英文看着难受？没关系，[这里有一些中文版的git指令教程！](https://www.yiibai.com/git)
+    英文看着难受？没关系，[这里有一些中文版的git指令教程！](https://www.yiibai.com/git)
 ## git的区域划分
 `git`分为三个区域，分别是工作区（`workspace`），暂存区/缓存区（`staging area`）和本地仓库区/版本库（`local repository`）
 工作区：工作区就是不包括`.git`文件在内的整个项目目录
@@ -28,27 +28,27 @@
 **`实际应用中，git的提示命令和提示信息非常有用，一定要仔细看！`**
 
 1. `git config` 命令用于获取并设置存储库或全局选项（一般刚下载的`git`需要配置用户名和用户邮箱，以获取代码的权限）
-  配置用户名：`git config --global user.name "tom"`
-  配置用户邮箱：`git config --global user.email "tom@qq.com"`
-  检查所有配置：`git  config --list`
-  检查用户名：`git config user.name`
-  检查用户邮箱：`git config user.email`
-  配置全局文本编辑器：`git config --global core.editor`
-  使用`vim`作为全局文本编辑器：`git config --global core.editor vim`
+    配置用户名：`git config --global user.name "tom"`
+    配置用户邮箱：`git config --global user.email "tom@qq.com"`
+    检查所有配置：`git  config --list`
+    检查用户名：`git config user.name`
+    检查用户邮箱：`git config user.email`
+    配置全局文本编辑器：`git config --global core.editor`
+    使用`vim`作为全局文本编辑器：`git config --global core.editor vim`
 2. `git init` 创建一个空的`Git`仓库或重新初始化一个现有仓库
 
   举个例子：如果在`/path/to/my/codebase` 目录下，输入`git init`命令，那么就会创建一个`/path/to/my/codebase/.git`目录
 3. `git clone`命令将远程仓库的资源克隆到本地。
-  举例子：克隆`jQuery`的版本库到本地的当前目录下`git clone http://github.com/jquery/jquery.git`
-  如果想指定某个分支`git clone -b 分支名 远程仓库http地址`
-  [成功拉取代码步骤](https://www.jianshu.com/p/2790a860f151)：
-  1）[在官网中下载git](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git)
-  2）配置用户名和用户邮箱
-  3）生成密钥`ssh-keygen -t rsa -C "youremail@example.com"`
-  4）把`[c盘->用户->自己的用户名->.ssh]`目录下生成好的公钥"`id_rsa.pub`"文件，以文本形式打开复制并添加到版本管理仓库中
-  5）`git clone`拉取代码
-  [如下报错处理流程](https://blog.csdn.net/itanping/article/details/104415899)：
-  ![报错图片](https://img-blog.csdnimg.cn/84afa4359e054fa5b79bd7912fc60cc7.png#pic_center)
+    举例子：克隆`jQuery`的版本库到本地的当前目录下`git clone http://github.com/jquery/jquery.git`
+    如果想指定某个分支`git clone -b 分支名 远程仓库http地址`
+    [成功拉取代码步骤](https://www.jianshu.com/p/2790a860f151)：
+    1）[在官网中下载git](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git)
+    2）配置用户名和用户邮箱
+    3）生成密钥`ssh-keygen -t rsa -C "youremail@example.com"`
+    4）把`[c盘->用户->自己的用户名->.ssh]`目录下生成好的公钥"`id_rsa.pub`"文件，以文本形式打开复制并添加到版本管理仓库中
+    5）`git clone`拉取代码
+    [如下报错处理流程](https://blog.csdn.net/itanping/article/details/104415899)：
+    ![报错图片](https://img-blog.csdnimg.cn/84afa4359e054fa5b79bd7912fc60cc7.png#pic_center)
 
   1）在`[c盘->用户->自己的用户名->.ssh]`目录下创建一个没有扩展名的文件`config`
 
@@ -92,14 +92,14 @@
     `git rm -f <file>`强行将文件从工作区和暂存区中删除，如果删除之前修改过并且已经放到暂存区的话，则必须要用强制删除选项`-f`
     `git rm --cached <file>`将文件从暂存区中移除，但仍然希望保留在当前工作目录中，使用`--cached`选项即可
 8. `git commit ` 将暂存区中的内容添加到本地仓库中
-  `git commit -m [message]`，其中`[message]`可以是一些备注信息。举个例子`git commit -m "fix: the error of license_pid has been feixed"`
-  `git commit -a`，`-a`参数设置修改文件后不需要执行`git add`命令，直接提交
-  `git commit --amend`增补提交，会使用与当前提交节点相同的父节点进行一次新的提交，旧的提交将会被取消
-  如果`git commit`没有设置`-m`选项，`Git`会尝试为你打开一个编辑器以填写提交信息。如果`Git`在你的配置中找不到相关信息，会默认打开`vim`编辑器。
-  1）输入`i`进入编辑文本模式
-  2）输入需要提交的信息
-  3）按`Esc`键退出文本编辑模式，进入命令模式
-  4）输入`:wq`保存文本并退出
+    `git commit -m [message]`，其中`[message]`可以是一些备注信息。举个例子`git commit -m "fix: the error of license_pid has been feixed"`
+    `git commit -a`，`-a`参数设置修改文件后不需要执行`git add`命令，直接提交
+    `git commit --amend`增补提交，会使用与当前提交节点相同的父节点进行一次新的提交，旧的提交将会被取消
+    如果`git commit`没有设置`-m`选项，`Git`会尝试为你打开一个编辑器以填写提交信息。如果`Git`在你的配置中找不到相关信息，会默认打开`vim`编辑器。
+    1）输入`i`进入编辑文本模式
+    2）输入需要提交的信息
+    3）按`Esc`键退出文本编辑模式，进入命令模式
+    4）输入`:wq`保存文本并退出
 9. `git branch` 查看本地的分支，其中`*`号的分支为当前所在分支
 
     `git branch -a`查看本地分支和远程分支
@@ -188,9 +188,9 @@
     git push github
     #向github远端仓库,推送main分支
     git push github main
+    #github默认的主分支是main，gitee默认的主分支是mast
     ```
 
-    
 18. `git stash` 会把所有未提交的修改都保存起来，用于后续恢复当前工作目录。
 	实际应用中推荐给每个`stash`加一个`message`，用于记录版本，使用`git stash save "message"`取代`git stash`命令
 	`git stash push` 保存当前工作目录的修改到`stash`中，保存指定文件的修改到stash中，如`git stash push file1.txt file2.txt`
@@ -211,37 +211,42 @@
 	其中:
 	`HEAD`表示当前版本，`HEAD^`上一个版本，`HEAD^^`上一个版本...以此类推
 	`HEAD`表示当前版本，`HEAD^1`上一个版本，`HEAD^2`上一个版本...以此类推
-	 `HEAD~0`表示当前版本，`HEAD~1`上一个版本，`HEAD~2`上一个版本...以此类推
-	 `HASH值`为每次`commit`时的`唯一HASH值`，该`HASH值`可以通过`git log`和个`git reflog`命令获得
-	 `git reset HEAD^`所有内容回退到上一个版本
+	`HEAD~0`表示当前版本，`HEAD~1`上一个版本，`HEAD~2`上一个版本...以此类推
+	`HASH值`为每次`commit`时的`唯一HASH值`，该`HASH值`可以通过`git log`和个`git reflog`命令获得
+	`git reset HEAD^`所有内容回退到上一个版本
 	`git reset HEAD^ hello.vue`文件`hello.vue`回退到上一个版本
 	`git reset 版本号` 回退到指定版本
 	`git reset --hard 版本号` 硬回退到指定版本
-	1）`git reset --mixed  HEAD`其中`--mixed`参数为默认参数，用于重置暂存区的文件与上一次`commit`保持一致，工作区文件内容保持不变
-	2）`git reset --soft HEAD`其中--soft参数用于回退到某个版本，`git reset --soft HEAD~3`回退到上上上个版本
-	3）`git reset --hard HEAD`其中`--hard`参数撤销工作区中所有未提交的修改内容，将暂存区与工作区都回到上一次版本，并删除之前的所有信息提交
-```javascript
-git reset HEAD^ //代码在commit之后失败了，可以回退到之前节点，重新提交
+	`git reset --mixed  HEAD`其中`--mixed`参数为默认参数，用于重置暂存区的文件与上一次`commit`保持一致，工作区文件内容保持不变
+	`git reset --soft HEAD`其中--soft参数用于回退到某个版本，`git reset --soft HEAD~3`回退到上上上个版本
+	`git reset --hard HEAD`其中`--hard`参数撤销工作区中所有未提交的修改内容，将暂存区与工作区都回到上一次版本，并删除之前的所有信息提交
+	
+	```shell
+	git reset HEAD^             #代码在commit之后失败了，可以回退到之前节点，重新提交
+	
+	git status                  #1.查看工作区状态，发现所在分支有分叉
+	git log --oneline --graph   #2.图像化展示提交记录
+	git reset --soft 16539cd    #3.软回退到版本提交之前
+	git status                  #4.查看状态，发现所在分支还是有分叉
+	git stash                   #5.将所有桌面信息提交到stash中
+	git status                  #6.查看分支状态
+	git reset --hard HEAD~6     #7.硬回退到6个版本之前
+	git pull                    #8.拉一下代码 发现还是没有拉取到最新的代码
+	git reset --hard HEAD~20    #9.回退的再狠一点，硬回退到20个版本之前
+	git pull                    #10.再次拉去一下代码
+	git status                  #11.查看一下状态，发现现在本地代码和远端代码保持一致了
+	```
 
-git status //1.查看工作区状态，发现所在分支有分叉
-git log --oneline --graph //2.图像化展示提交记录
-git reset --soft 16539cd //3.软回退到版本提交之前
-git status //4.查看状态，发现所在分支还是有分叉
-git stash //5.将所有桌面信息提交到stash中
-git status //6.查看分支状态
-git reset --hard HEAD~6 //7.硬回退到6个版本之前
-git pull //8.拉一下代码 发现还是没有拉取到最新的代码
-git reset --hard HEAD~20 //9.回退的再狠一点，硬回退到20个版本之前
-git pull //10.再次拉去一下代码
-git status //11.查看一下状态，发现现在本地代码和远端代码保持一致了
-```
-21. `git clean` 命令用来从你的工作目录中删除所有没有track过的文件
-`git reset --hard`和`git clean`一起使用，放弃所有本地修改
+20. `git clean` 命令用来从你的工作目录中删除所有没有track过的文件
+    `git reset --hard`和`git clean`一起使用，放弃所有本地修改
+
 ## git分支命名规范
-git 分支分为集成分支、功能分支和修复分支，分别命名为 `develop`、`feature` 和 `hotfix`，均为单数。不可使用 features、future、hotfixes、hotfixs 等错误名称。	
-举个例子：增加一个icons的功能分支，我们可以把它命名为`feature/icons`
+
+`git` 分支分为集成分支、功能分支和修复分支，分别命名为 `develop`、`feature` 和 `hotfix`，均为单数。不可使用 `features`、`future`、`hotfixes`、`hotfixs` 等错误名称。	
+举个例子：增加一个`icons`的功能分支，我们可以把它命名为`feature/icons`
+
 ## husky的commit提交规范
- **husky的类型：**
+husky的类型：
 `feat` : 新增了功能
 `fix`: 修复了BUG 
 `docs`: 仅仅修改了文档
@@ -250,5 +255,5 @@ git 分支分为集成分支、功能分支和修复分支，分别命名为 `de
 `test`: 测试用例，比如单元测试、集成测试等
 `chore`: 改变构建流程、或者增加依赖库、工具等
 `revert`: 回滚到上一个版本
- **husky的格式：** `husky类型加冒号加空格`
+husky的格式： `husky类型加冒号加空格`
 举个例子：`git commit "feat: icons have been added"`

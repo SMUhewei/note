@@ -8,12 +8,12 @@
  - 举栗子：如果想要查看`pull命令`如何使用，则可以使用`git help pull`命令,按键盘中的`q键`可退出
     英文看着难受？没关系，[这里有一些中文版的git指令教程！](https://www.yiibai.com/git)
 ## git的区域划分
-`git`分为三个区域，分别是工作区（`workspace`），暂存区/缓存区（`staging area`）和本地仓库区/版本库（`local repository`）
-工作区：工作区就是不包括`.git`文件在内的整个项目目录
-暂存区/缓存区：一般存放在`.git`目录下的`index`文件中，所以我们把暂存区也叫索引`index`.
-本地仓库区/版本库：工作区的隐藏目录`.git`文件
-	![git不同区域的划分](https://img-blog.csdnimg.cn/f666faf384874ca2af5478e52d99c5be.png#pic_center)
-	注意点：
+`git`分为三个区域，分别是工作区（`workspace`），暂存区/缓存区（`staging area`）和本地仓库区/版本库（`local repository`）  
+工作区：工作区就是不包括`.git`文件在内的整个项目目录  
+暂存区/缓存区：一般存放在`.git`目录下的`index`文件中，所以我们把暂存区也叫索引`index`.  
+本地仓库区/版本库：工作区的隐藏目录`.git`文件  
+![git不同区域的划分](https://img-blog.csdnimg.cn/f666faf384874ca2af5478e52d99c5be.png#pic_center)  
+注意点：
 
 1. `Changes to be committed`:表示已经从工作区`add`到暂存区的`file`（文件或文件夹）。
 	可以通过`git restore --staged filename` 命令将该`file`从暂存区移除，只有工作区有该文件，该文件就为`Untracked files`。
